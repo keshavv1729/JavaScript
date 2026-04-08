@@ -1,19 +1,22 @@
-let N = Number(prompt("Enter N:"));
-let seed = Number(prompt("Enter seed:"));
-let current = N;
+const btn2 = document.getElementById("btn2")
+btn2.onclick = function Q2(){
+    let N = Number(prompt("Enter N:"));
+    let seed = Number(prompt("Enter seed:"));
+    let current = N;
 
-for (let i = 0; i < 3; i++) {
-    if (current % 2 == 0) {
-        current = (current / 2) + seed;
-    } 
-    else {
-        current = (current * 3) - seed;
+    for (let i = 0; i < 3; i++) {
+        if (current % 2 == 0) {
+            current = (current / 2) + seed;
+        } 
+        else {
+            current = (current * 3) - seed;
+        }
     }
-}
 
-let middleDigit = Number(current.toString()[1]);
-if (current >= 100 && current <= 999 && middleDigit == seed) {
-    alert("YES, " + current);
-} else {
-    alert("NO, " + current);
+    let middleDigit = Number(current.toString()[1]);
+    if (current >= 100 && current <= 999 && middleDigit == seed) {
+        alert("YES, " + current);
+    } else {
+        alert("NO, " + current);
+    }
 }
